@@ -29,10 +29,14 @@ const SingInContainer = () => {
                 alert("아이디 또는 비밀번호를 입력하지 않았습니다.")
             }else{
                 const response = await LoginApi.login(userId,password);
+                //response.config.data
+                console.log(response.config.data.userId)
                 if(response.status===200){
                     alert("로그인을 성공하였습니다.")
                     localStorage.setItem("accessToken",response.data.token)
-                    history.push('/admin/main')
+                    if(userId==='test'&&password==='1234'){
+                        history.push('/admin/main')
+                    }
                 }else{
                     alert("로그인을 실패하였습니다.")
                 }
