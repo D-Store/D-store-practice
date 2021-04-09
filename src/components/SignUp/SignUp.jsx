@@ -13,6 +13,7 @@ const SignUp = ({
   passwordInput,
   nameInput,
   genderIdInput,
+  handleSignUp,
 }) => {
   return (
     <div>
@@ -44,6 +45,7 @@ const SignUp = ({
         onChange={e => onChangeUserGenderId(e)}
         value={GenderId}
       />
+      <button onClick={handleSignUp}>회원가입</button>
     </div>
   );
 };

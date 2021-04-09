@@ -12,7 +12,6 @@ class AuthApi {
 
     return response;
   }
-
   async signUp(userId, password, name, genderId) {
     const body = {
       userId,

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import SignUp from "../../components/SignUp";
+import AuthApi from "../../assets/API/AuthApi";
 
 const SignUpContainer = () => {
   //태그선택
@@ -39,6 +40,7 @@ const SignUpContainer = () => {
           genderIdInput.current?.focus();
         } else {
           console.log("회원가입!");
+          handleSignUp(userId, password, name, genderId);
         }
       }
     };
@@ -47,6 +49,15 @@ const SignUpContainer = () => {
       document.removeEventListener("keydown", listener);
     };
   }, [userId, password, name, genderId]);
+  //회원가입
+  const handleSignUp = async () => {
+    try {
+      const response = await AuthApi.signUp(userId, password, name, genderId);
+      console.log(response.status);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <SignUp
@@ -62,6 +73,7 @@ const SignUpContainer = () => {
       passwordInput={passwordInput}
       nameInput={nameInput}
       genderIdInput={genderIdInput}
+      handleSignUp={handleSignUp}
     />
   );
 };
