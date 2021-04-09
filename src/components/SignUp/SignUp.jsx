@@ -1,22 +1,28 @@
 import React from "react";
 
 const SignUp = ({
-  Userid,
+  userId,
   password,
   name,
+  GenderId,
   onChangeUserId,
   onChangeUserPw,
   onChangeUserName,
+  onChangeUserGenderId,
+  userIdInput,
   passwordInput,
   nameInput,
+  genderIdInput,
+  handleSignUp,
 }) => {
   return (
     <div>
       <input
         type="text"
+        ref={userIdInput}
         placeholder="아이디"
         onChange={e => onChangeUserId(e)}
-        value={Userid}
+        value={userId}
       />
       <input
         type="text"
@@ -32,6 +38,14 @@ const SignUp = ({
         onChange={e => onChangeUserName(e)}
         value={name}
       />
+      <input
+        type="text"
+        placeholder="성별(1,2)"
+        ref={genderIdInput}
+        onChange={e => onChangeUserGenderId(e)}
+        value={GenderId}
+      />
+      <button onClick={handleSignUp}>회원가입</button>
     </div>
   );
 };
