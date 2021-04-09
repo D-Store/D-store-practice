@@ -8,8 +8,11 @@ class LoginApi{
 
     async login(userId,password){
         
-        const data = {userId,password}
-        const response = await axios.post(`${SERVER}/signin`,data)
+        const body = {
+            userId,
+            password
+        }
+        const response = await axios.post(`${SERVER}/signin`,body)
         
         return response;
     }

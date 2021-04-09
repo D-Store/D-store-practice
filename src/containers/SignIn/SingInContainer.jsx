@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import SignIn from '../../components/SignIn/SignIn'
+import UseHistory, { useHistory } from "react-router-dom"
 import LoginApi from "../../assets/API/LoginApi"
 
 const SingInContainer = () => {
+
+    const history = useHistory();
 
     const [userId,setUserId] = useState("")
 
@@ -29,6 +32,7 @@ const SingInContainer = () => {
                 if(response.status===200){
                     alert("로그인을 성공하였습니다.")
                     localStorage.setItem("accessToken",response.data.token)
+                    history.push('/admin/main')
                 }else{
                     alert("로그인을 실패하였습니다.")
                 }
