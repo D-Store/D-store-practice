@@ -4,12 +4,15 @@ const SignUp = ({
   userId,
   password,
   name,
+  GenderId,
   onChangeUserId,
   onChangeUserPw,
   onChangeUserName,
+  onChangeUserGenderId,
   userIdInput,
   passwordInput,
   nameInput,
+  genderIdInput,
 }) => {
   return (
     <div>
@@ -33,6 +36,13 @@ const SignUp = ({
         placeholder="이름"
         onChange={e => onChangeUserName(e)}
         value={name}
+      />
+      <input
+        type="text"
+        placeholder="성별(1,2)"
+        ref={genderIdInput}
+        onChange={e => onChangeUserGenderId(e)}
+        value={GenderId}
       />
     </div>
   );
