@@ -1,12 +1,13 @@
 import React from "react";
 
 const SignUp = ({
-  Userid,
+  userId,
   password,
   name,
   onChangeUserId,
   onChangeUserPw,
   onChangeUserName,
+  userIdInput,
   passwordInput,
   nameInput,
 }) => {
@@ -14,9 +15,10 @@ const SignUp = ({
     <div>
       <input
         type="text"
+        ref={userIdInput}
         placeholder="아이디"
         onChange={e => onChangeUserId(e)}
-        value={Userid}
+        value={userId}
       />
       <input
         type="text"
