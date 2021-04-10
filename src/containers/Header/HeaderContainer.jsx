@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/common/Header";
+import { useHistory } from "react-router-dom";
 
 const HeaderContainer = () => {
+  const history = useHistory();
+  //isLogin
   const [isLogin, setIsLogin] = useState(false);
-
+  //isLogin 여부
   useEffect(() => {
     const Token = localStorage.getItem("accessToken");
     if (Token === null) {
@@ -11,9 +14,16 @@ const HeaderContainer = () => {
     } else {
       setIsLogin(true);
     }
-  }, []);
+    console.log("a");
+  });
 
-  return <Header isLogin={isLogin} />;
+  const handleLogOut = () => {
+    console.log("logout");
+    localStorage.removeItem("accessToken");
+    history.push("/");
+  };
+
+  return <Header isLogin={isLogin} handleLogOut={handleLogOut} />;
 };
 
 export default HeaderContainer;

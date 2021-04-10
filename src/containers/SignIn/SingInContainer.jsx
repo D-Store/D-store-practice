@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SignIn from "../../components/SignIn/SignIn";
-import UseHistory, { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import AuthApi from "../../assets/API/AuthApi";
 
 const SingInContainer = () => {

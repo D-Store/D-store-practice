@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
-const Header = ({ isLogin }) => {
+const Header = ({ isLogin, handleLogOut }) => {
   return (
     <div className="header">
       <div className="header-main">D'store</div>
-      {isLogin ? (
+      {!isLogin ? (
         <div className="header-nav">
           <div className="header-nav-item">
             <Link to="/signIn">SignIn</Link>
@@ -23,6 +23,7 @@ const Header = ({ isLogin }) => {
           <div className="header-nav-item">
             <Link to="/signUp">내정보</Link>
           </div>
+          <button onClick={() => handleLogOut()}>로그아웃</button>
         </div>
       )}
     </div>
