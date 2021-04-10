@@ -1,8 +1,6 @@
 import axios from "axios";
 import { SERVER } from "../../config/config.json";
 class AuthApi {
-  constructor() {}
-
   async login(userId, password) {
     const body = {
       userId,
