@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import SignUp from "../../components/SignUp";
+import { useHistory } from "react-router-dom";
 import AuthApi from "../../assets/API/AuthApi";
 
 const SignUpContainer = () => {
+  //useHistory
+  const history = useHistory();
   //태그선택
   const userIdInput = useRef();
   const passwordInput = useRef();
@@ -53,9 +56,12 @@ const SignUpContainer = () => {
   const handleSignUp = async () => {
     try {
       const response = await AuthApi.signUp(userId, password, name, genderId);
+      alert("회원가입을 성공하였습니다.");
       console.log(response.status);
+      history.push("/");
     } catch (err) {
       console.log(err);
+      alert("회원가입을 실패하였습니다.");
     }
   };
 
