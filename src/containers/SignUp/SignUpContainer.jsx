@@ -11,6 +11,10 @@ const SignUpContainer = () => {
   const passwordInput = useRef();
   const nameInput = useRef();
   const genderIdInput = useRef();
+  const userIdError = useRef();
+  const passwordError = useRef();
+  const nameError = useRef();
+  const genderIdError = useRef();
   //input State
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
@@ -29,18 +33,26 @@ const SignUpContainer = () => {
   const onChangeUserGenderId = e => {
     setGenderId(e.target.value);
   };
-  //Enter 시 포커싱
+  //Enter 시 포커싱 & 에러메세지
   useEffect(() => {
     const listener = e => {
       if (e.key === "Enter" || e.key === "NumpadEnter") {
         if (userId.length === 0) {
           userIdInput.current?.focus();
+          hiddenError();
+          userIdError.current.classList.toggle("hidden");
         } else if (password.length === 0) {
           passwordInput.current?.focus();
+          hiddenError();
+          passwordError.current.classList.toggle("hidden");
         } else if (name.length === 0) {
           nameInput.current?.focus();
+          hiddenError();
+          nameError.current.classList.toggle("hidden");
         } else if (genderId.length === 0) {
           genderIdInput.current?.focus();
+          hiddenError();
+          genderIdError.current.classList.toggle("hidden");
         } else {
           console.log("회원가입!");
           handleSignUp(userId, password, name, genderId);
@@ -64,6 +76,13 @@ const SignUpContainer = () => {
       alert("회원가입을 실패하였습니다.");
     }
   };
+  //에러메세지 제거
+  const hiddenError = () => {
+    userIdError.current.classList.add("hidden");
+    passwordError.current.classList.add("hidden");
+    nameError.current.classList.add("hidden");
+    genderIdError.current.classList.add("hidden");
+  };
 
   return (
     <SignUp
@@ -80,6 +99,10 @@ const SignUpContainer = () => {
       nameInput={nameInput}
       genderIdInput={genderIdInput}
       handleSignUp={handleSignUp}
+      userIdError={userIdError}
+      passwordError={passwordError}
+      nameError={nameError}
+      genderIdError={genderIdError}
     />
   );
 };

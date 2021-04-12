@@ -23,31 +23,31 @@ const SingInContainer = () => {
     setPassword(e.target.value);
   };
 
-  useEffect(()=>{
-    const listener = (e) => {
-      if(e.key === "Enter"|| e.key === "NumpadEnter"){
-        if(userId.length === 0){
+  useEffect(() => {
+    const listener = e => {
+      if (e.key === "Enter" || e.key === "NumpadEnter") {
+        if (userId.length === 0) {
           errorInputPassword.current.style.display = "none";
-          errorTryLogin.current.style.display = "none"
+          errorTryLogin.current.style.display = "none";
           errorInputUserId.current.style.display = "block";
           userIdInput.current?.focus();
-        }else if(userId.length !== 0){
+        } else if (userId.length !== 0) {
           errorInputUserId.current.style.display = "none";
           passwordInput.current?.focus();
-          if(password.length === 0){
+          if (password.length === 0) {
             errorTryLogin.current.style.display = "none";
             errorInputPassword.current.style.display = "block";
-          }else{
-             tryLogin()
+          } else {
+            tryLogin();
           }
         }
       }
-    }
-    document.addEventListener("keydown",listener);
+    };
+    document.addEventListener("keydown", listener);
     return () => {
-      document.removeEventListener("keydown",listener);
-    }
-  })
+      document.removeEventListener("keydown", listener);
+    };
+  });
 
   const tryLogin = async () => {
     try {
@@ -59,7 +59,7 @@ const SingInContainer = () => {
           localStorage.setItem("accessToken", response.data.token);
           if (userId === "test" && password === "1234") {
             history.push("/admin/main");
-          }else{
+          } else {
             history.push("/");
           }
         } else {
@@ -69,14 +69,14 @@ const SingInContainer = () => {
         }
       }
     } catch (err) {
-      if(err.response.status===400){
+      if (err.response.status === 400) {
         setPassword("");
-        errorInputPassword.current.style.display = "none"
-        errorTryLogin.current.style.display = "block"
+        errorInputPassword.current.style.display = "none";
+        errorTryLogin.current.style.display = "block";
         passwordInput.current?.focus();
-        return 
-      }else{
-        alert("에러가 발생했습니다.")
+        return;
+      } else {
+        alert("에러가 발생했습니다.");
       }
     }
   };

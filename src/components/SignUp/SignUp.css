@@ -48,6 +48,11 @@
   border-color: blue;
 }
 
+.signUp-form-input-error {
+  color: red;
+  font-size: 0.7rem;
+}
+
 .signUp-form-input-item::placeholder {
   color: #d7e2eb;
 }
@@ -63,4 +68,8 @@
   height: 40px;
   box-sizing: border-box;
   outline: none;
+}
+
+.hidden {
+  display: none;
 }
