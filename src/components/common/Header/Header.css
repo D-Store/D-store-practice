@@ -4,32 +4,49 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #0c151c;
 }
 
 .header-main {
-  width: 50%;
-  display: flex;
-  justify-content: center;
 }
 
-.header-main a {
+.header-main > a {
   font-weight: 1000;
   font-size: 2rem;
   cursor: pointer;
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
 .header-nav {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  grid-template-areas: "func log";
 }
 
-.header-nav-item > div,
-.header-nav-item > a {
+.header-nav-log {
+  grid-area: log;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-nav-function {
+  grid-area: func;
+  display: flex;
+  justify-content: center;
+}
+
+.header-nav-log > div,
+.header-nav-function > a {
   cursor: pointer;
-  color: black;
+  color: rgb(131, 125, 125);
   text-decoration: none;
+  padding: 0.3rem;
+  font-weight: 600;
+}
+
+.header-nav-log > div:hover,
+.header-nav-function > a:hover {
+  color: white;
 }
