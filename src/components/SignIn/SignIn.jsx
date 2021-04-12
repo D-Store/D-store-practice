@@ -5,10 +5,13 @@ const SignIn = ({
     userId,
     password,
     onChangeUserId,
-    onChangeUserPw,
+    onChangePassword,
     tryLogin,
+    userIdInput,
     passwordInput,
-    errorInput
+    errorInputUserId,
+    errorInputPassword,
+    errorTryLogin
 }) => {
     return(
         <>
@@ -18,13 +21,15 @@ const SignIn = ({
                 type="text" 
                 name="userId" 
                 placeholder="아이디" 
+                ref={userIdInput}
                 onChange={(e) => onChangeUserId(e)} 
                 value={userId}></input>
             </div>
             <div 
-            className="errorInput" 
+            className="errorMessage"
+            name="errorDiv"
             style={{display:"none"}}
-            ref={errorInput}
+            ref={errorInputUserId}
             >
                 아이디를 입력해주세요
             </div>
@@ -34,8 +39,24 @@ const SignIn = ({
                 name="userPw" 
                 placeholder="비밀번호"
                 ref={passwordInput} 
-                onChange={(e) => onChangeUserPw(e)} 
+                onChange={(e) => onChangePassword(e)} 
                 value={password}/>
+            </div>
+            <div 
+            className="errorMessage" 
+            name="errorDiv"
+            style={{display:"none"}} 
+            ref={errorInputPassword}
+            >
+                비밀번호를 입력해주세요
+            </div>
+            <div 
+            className="errorMessage"
+            name="errorDiv"
+            style={{display:"none"}}
+            ref={errorTryLogin}
+            >
+                가입하지 않은 아이디이거나,잘못된 비밀번호입니다.
             </div>
             <div onClick={tryLogin}>로그인</div>
         </div>
