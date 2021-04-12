@@ -5,25 +5,27 @@ import "./Header.css";
 const Header = ({ isLogin, handleLogOut }) => {
   return (
     <div className="header">
-      <div className="header-main">D'store</div>
+      <div className="header-main">
+        <Link to="/">D'store</Link>
+      </div>
       {!isLogin ? (
         <div className="header-nav">
-          <div className="header-nav-item">
+          <div className="header-nav-log">
             <Link to="/signIn">SignIn</Link>
-          </div>
-          <div className="header-nav-item">
             <Link to="/signUp">SingUp</Link>
           </div>
         </div>
       ) : (
         <div className="header-nav">
-          <div className="header-nav-item">
+          <div className="header-nav-function">
             <Link to="/signIn">글쓰기</Link>
-          </div>
-          <div className="header-nav-item">
             <Link to="/signUp">내정보</Link>
           </div>
-          <button onClick={() => handleLogOut()}>로그아웃</button>
+          <div className="header-nav-log">
+            <a href="/" onClick={() => handleLogOut()}>
+              로그아웃
+            </a>
+          </div>
         </div>
       )}
     </div>
