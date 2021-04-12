@@ -5,7 +5,9 @@ import "./Header.css";
 const Header = ({ isLogin, handleLogOut }) => {
   return (
     <div className="header">
-      <div className="header-main">D'store</div>
+      <div className="header-main">
+        <Link to="/">D'store</Link>
+      </div>
       {!isLogin ? (
         <div className="header-nav">
           <div className="header-nav-item">
@@ -23,7 +25,9 @@ const Header = ({ isLogin, handleLogOut }) => {
           <div className="header-nav-item">
             <Link to="/signUp">내정보</Link>
           </div>
-          <button onClick={() => handleLogOut()}>로그아웃</button>
+          <div className="header-nav-item">
+            <div onClick={() => handleLogOut()}>로그아웃</div>
+          </div>
         </div>
       )}
     </div>
