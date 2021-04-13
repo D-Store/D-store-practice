@@ -82,7 +82,7 @@ const SignUp = ({
         </div>
         <div className="signUp-form-signIn">
           <span className="signUp-form-signIn-item">
-            이미 계정이 있으신가요? <Link to="/signIn">로그인::after</Link>
+            이미 계정이 있으신가요? <Link to="/signIn">로그인</Link>
           </span>
         </div>
       </div>
