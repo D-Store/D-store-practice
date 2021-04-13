@@ -5,7 +5,7 @@ import "./SignIn.css";
 const SignIn = ({
   userId,
   password,
-  onChangeUserId,
+  onChangeEmail,
   onChangePassword,
   tryLogin,
   userIdInput,
@@ -35,7 +35,7 @@ const SignIn = ({
                 name="userId"
                 placeholder="아이디"
                 ref={userIdInput}
-                onChange={e => onChangeUserId(e)}
+                onChange={e => onChangeEmail(e)}
                 value={userId}
               ></input>
             </div>
