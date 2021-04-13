@@ -18,13 +18,13 @@ const SignUpContainer = () => {
   const nameError = useRef();
   const genderIdError = useRef();
   //input State
-  const [email, setemail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [genderId, setGenderId] = useState("");
   //setState on event
-  const onChangeemail = e => {
-    setemail(e.target.value);
+  const onChangeEmail = e => {
+    setEmail(e.target.value);
   };
   const onChangeUserPw = e => {
     setPassword(e.target.value);
@@ -92,7 +92,7 @@ const SignUpContainer = () => {
       password={password}
       name={name}
       genderId={genderId}
-      onChangeemail={onChangeemail}
+      onChangeEmail={onChangeEmail}
       onChangeUserPw={onChangeUserPw}
       onChangeUserName={onChangeUserName}
       onChangeUserGenderId={onChangeUserGenderId}

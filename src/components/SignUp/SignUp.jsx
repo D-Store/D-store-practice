@@ -7,7 +7,7 @@ const SignUp = ({
   password,
   name,
   GenderId,
-  onChangeemail,
+  onChangeEmail,
   onChangeUserPw,
   onChangeUserName,
   onChangeUserGenderId,
@@ -32,7 +32,7 @@ const SignUp = ({
             type="text"
             ref={emailInput}
             placeholder="아이디"
-            onChange={e => onChangeemail(e)}
+            onChange={e => onChangeEmail(e)}
             value={email}
           />
           <div ref={emailError} className="signUp-form-input-error hidden">
