@@ -61,7 +61,6 @@ const SignInContainer = () => {
         //서버 통신,토큰저장,페이지 라우팅
         const response = await AuthApi.login(email, password);
         if (response.status === 200) {
-          console.log("ㅁ")
           localStorage.setItem("accessToken", response.data.token);
           if (email === "test" && password === "1234") {
             history.push("/admin/main");
