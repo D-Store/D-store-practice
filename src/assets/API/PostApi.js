@@ -10,6 +10,7 @@ class PostApi {
 
     return response;
   }
+
   async CreateBoard(date, contents, profile, show) {
     const body = {
       date,

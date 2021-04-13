@@ -7,10 +7,12 @@ const SignUpContainer = () => {
   //useHistory
   const history = useHistory();
   //태그선택
+  //input
   const userIdInput = useRef();
   const passwordInput = useRef();
   const nameInput = useRef();
   const genderIdInput = useRef();
+  //Error
   const userIdError = useRef();
   const passwordError = useRef();
   const nameError = useRef();
