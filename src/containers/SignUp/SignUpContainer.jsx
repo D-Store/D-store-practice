@@ -31,6 +31,10 @@ const SignUpContainer = () => {
   };
 
   const handleAuthEmail = async () => {
+    if (!email) {
+      alert("이메일을 작성하지 않았습니다.");
+      return;
+    }
     try {
       const response = await AuthApi.authEmail(email);
       console.log(response);
