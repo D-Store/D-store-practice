@@ -17,9 +17,9 @@ const MainContainer = () => {
     }
   };
 
-  useEffect(() => {
-    getPosting().then();
-  });
+  //   useEffect(() => {
+  //     getPosting().then();
+  //   });
 
   return <Main isLoading={isLoading} />;
 };

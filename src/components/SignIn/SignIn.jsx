@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import "./SignIn.css";
 
 const SignIn = ({
-  userId,
+  email,
   password,
-  onChangeUserId,
+  onChangeEmail,
   onChangePassword,
   tryLogin,
-  userIdInput,
+  emailInput,
   passwordInput,
-  errorInputUserId,
+  errorInputemail,
   errorInputPassword,
   errorTryLogin,
 }) => {
@@ -32,18 +32,18 @@ const SignIn = ({
               <input
                 className="signIn-input-item"
                 type="text"
-                name="userId"
+                name="email"
                 placeholder="아이디"
-                ref={userIdInput}
-                onChange={e => onChangeUserId(e)}
-                value={userId}
+                ref={emailInput}
+                onChange={e => onChangeEmail(e)}
+                value={email}
               ></input>
             </div>
             <div
               className="errorMessage"
               name="errorDiv"
               style={{ display: "none" }}
-              ref={errorInputUserId}
+              ref={errorInputemail}
             >
               아이디를 입력해주세요
             </div>
