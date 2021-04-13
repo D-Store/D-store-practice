@@ -1,12 +1,12 @@
 import axios from "axios";
 import { SERVER } from "../../config/config.json";
 class AuthApi {
-  async login(userId, password) {
+  async login(email, password) {
     const body = {
-      userId,
+      email,
       password,
     };
-    const response = await axios.post(`${SERVER}/signin`, body);
+    const response = await axios.post(`${SERVER}/auth/login`, body);
 
     return response;
   }

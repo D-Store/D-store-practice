@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import './SignIn.css'
 
 const SignIn = ({
-    userId,
+    email,
     password,
-    onChangeUserId,
+    onChangeEmail,
     onChangePassword,
     tryLogin,
     userIdInput,
@@ -33,8 +33,8 @@ const SignIn = ({
                         name="userId" 
                         placeholder="아이디" 
                         ref={userIdInput}
-                        onChange={(e) => onChangeUserId(e)} 
-                        value={userId}></input>
+                        onChange={(e) => onChangeEmail(e)} 
+                        value={email}></input>
                     </div>
                     <div 
                     className="errorMessage"

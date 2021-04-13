@@ -13,11 +13,11 @@ const SignInContainer = () => {
   const errorInputPassword = useRef();
   const errorTryLogin = useRef();
   // input 할때 사용할 useState 설정
-  const [userId, setUserId] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   //아이디 입력 받기
-  const onChangeUserId = e => {
-    setUserId(e.target.value);
+  const onChangeEmail = e => {
+    setEmail(e.target.value);
   };
   //비밀 번호 입력 받기
   const onChangePassword = e => {
@@ -28,12 +28,12 @@ const SignInContainer = () => {
   useEffect(() => {
     const listener = e => {
       if (e.key === "Enter" || e.key === "NumpadEnter") {
-        if (userId.length === 0) {
+        if (email.length === 0) {
           errorInputPassword.current.style.display = "none";
           errorTryLogin.current.style.display = "none";
           errorInputUserId.current.style.display = "block";
           userIdInput.current?.focus();
-        } else if (userId.length !== 0) {
+        } else if (email.length !== 0) {
           errorInputUserId.current.style.display = "none";
           passwordInput.current?.focus();
           if (password.length === 0) {
@@ -55,14 +55,15 @@ const SignInContainer = () => {
   const tryLogin = async () => {
     try {
       //아이디 비밀번호 입력 유무 확인
-      if (!userId || !password) {
+      if (!email || !password) {
         alert("아이디 또는 비밀번호를 입력하지 않았습니다.");
       } else {
         //서버 통신,토큰저장,페이지 라우팅
-        const response = await AuthApi.login(userId, password);
+        const response = await AuthApi.login(email, password);
         if (response.status === 200) {
+          console.log("ㅁ")
           localStorage.setItem("accessToken", response.data.token);
-          if (userId === "test" && password === "1234") {
+          if (email === "test" && password === "1234") {
             history.push("/admin/main");
           } else {
             history.push("/");
@@ -88,9 +89,9 @@ const SignInContainer = () => {
   };
   return (
     <SignIn
-      userId={userId}
+      email={email}
       password={password}
-      onChangeUserId={onChangeUserId}
+      onChangeEmail={onChangeEmail}
       onChangePassword={onChangePassword}
       tryLogin={tryLogin}
       userIdInput={userIdInput}
