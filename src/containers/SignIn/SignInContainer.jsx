@@ -7,9 +7,9 @@ const SignInContainer = () => {
   // useHistory 사용
   const history = useHistory();
   // useRef 설정
-  const userIdInput = useRef();
+  const emailInput = useRef();
   const passwordInput = useRef();
-  const errorInputUserId = useRef();
+  const errorInputEmail = useRef();
   const errorInputPassword = useRef();
   const errorTryLogin = useRef();
   // input 할때 사용할 useState 설정
@@ -31,10 +31,10 @@ const SignInContainer = () => {
         if (email.length === 0) {
           errorInputPassword.current.style.display = "none";
           errorTryLogin.current.style.display = "none";
-          errorInputUserId.current.style.display = "block";
-          userIdInput.current?.focus();
+          errorInputEmail.current.style.display = "block";
+          emailInput.current?.focus();
         } else if (email.length !== 0) {
-          errorInputUserId.current.style.display = "none";
+          errorInputEmail.current.style.display = "none";
           passwordInput.current?.focus();
           if (password.length === 0) {
             errorTryLogin.current.style.display = "none";
@@ -93,9 +93,9 @@ const SignInContainer = () => {
       onChangeEmail={onChangeEmail}
       onChangePassword={onChangePassword}
       tryLogin={tryLogin}
-      userIdInput={userIdInput}
+      emailInput={emailInput}
       passwordInput={passwordInput}
-      errorInputUserId={errorInputUserId}
+      errorInputEmail={errorInputEmail}
       errorInputPassword={errorInputPassword}
       errorTryLogin={errorTryLogin}
     />

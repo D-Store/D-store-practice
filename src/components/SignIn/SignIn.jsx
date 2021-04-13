@@ -10,7 +10,7 @@ const SignIn = ({
   tryLogin,
   emailInput,
   passwordInput,
-  errorInputemail,
+  errorInputEmail,
   errorInputPassword,
   errorTryLogin,
 }) => {
@@ -43,7 +43,7 @@ const SignIn = ({
               className="errorMessage"
               name="errorDiv"
               style={{ display: "none" }}
-              ref={errorInputemail}
+              ref={errorInputEmail}
             >
               아이디를 입력해주세요
             </div>
