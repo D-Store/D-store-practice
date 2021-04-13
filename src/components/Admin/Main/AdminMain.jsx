@@ -9,6 +9,15 @@ const AdminMain = () => {
             </div>
             <div className="admin-main-text">
                 회원정보표시
+                <div className="admin-main-text-items">
+                    유저
+                </div>
+                <div className="admin-main-text-items">
+                    유저
+                </div>
+                <div className="admin-main-text-items">
+                    유저
+                </div>
             </div>
         </div>
     )

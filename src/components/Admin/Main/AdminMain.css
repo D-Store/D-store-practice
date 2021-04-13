@@ -1,5 +1,5 @@
 .admin-main-form {
-    height: 93vh;
+    height: 100vh;
 }
 
 .admin-main-title {
@@ -12,7 +12,10 @@
 
 .admin-main-text{
     border: 1px solid blue;
-    height: 300px;
-    display: flex;
-    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.admin-main-text-items {
+    border: 1px solid black;
 }
