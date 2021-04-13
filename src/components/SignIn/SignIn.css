@@ -102,6 +102,24 @@
     margin-left: 0.5rem;
 }
 
-.signIn-input-item::after {
+.signIn-diver {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.signIn-diver-line {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 320px;
+    height: 1px;
+    background-color: red;
     
+}
+
+.signIn-diver-span {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }

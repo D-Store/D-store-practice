@@ -19,6 +19,12 @@ const SignIn = ({
         <div className="signIn">
             <div className="signIn-form">
                 <div className="signIn-form-title">로그인</div>
+                    <div className="signIn-diver">
+                        <div className="signIn-diver-line"></div>
+                        <div className="signIn-diver-span">
+                            <span>또는</span>
+                        </div>
+                    </div>
                 <div className="signIn-input">
                     <div>
                         <input
