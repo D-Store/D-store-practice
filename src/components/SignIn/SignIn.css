@@ -71,6 +71,11 @@
   padding-top: 11.5px;
 }
 
+.signIn-submit:hover {
+  background-color: #016ae2;
+  cursor: pointer;
+}
+
 .another-approach {
   margin-top: 15px;
   text-align: center;
