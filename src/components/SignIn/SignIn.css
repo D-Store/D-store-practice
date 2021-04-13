@@ -110,10 +110,12 @@
   margin-right: auto;
   width: 54px;
   background-color: white;
+  color: #90929e;
 }
 
 .signIn-diver-span .back span {
   text-align: center;
+  font-size: 0.875rem;
 }
 
 .signIn-diver-line {
@@ -122,7 +124,7 @@
   top: 50%;
   width: 320px;
   height: 1px;
-  background-color: red;
+  background-color: #ced0da;
 }
 
 .signIn-diver-span {
