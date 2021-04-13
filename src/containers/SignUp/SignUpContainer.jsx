@@ -11,17 +11,14 @@ const SignUpContainer = () => {
   const emailInput = useRef();
   const passwordInput = useRef();
   const nameInput = useRef();
-  const genderIdInput = useRef();
   //Error
   const emailError = useRef();
   const passwordError = useRef();
   const nameError = useRef();
-  const genderIdError = useRef();
   //input State
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [genderId, setGenderId] = useState("");
   //setState on event
   const onChangeEmail = e => {
     setEmail(e.target.value);
@@ -31,9 +28,6 @@ const SignUpContainer = () => {
   };
   const onChangeUserName = e => {
     setName(e.target.value);
-  };
-  const onChangeUserGenderId = e => {
-    setGenderId(e.target.value);
   };
   //Enter 시 포커싱 & 에러메세지
   useEffect(() => {
@@ -51,13 +45,9 @@ const SignUpContainer = () => {
           nameInput.current?.focus();
           hiddenError();
           nameError.current.classList.toggle("hidden");
-        } else if (genderId.length === 0) {
-          genderIdInput.current?.focus();
-          hiddenError();
-          genderIdError.current.classList.toggle("hidden");
         } else {
           console.log("회원가입!");
-          handleSignUp(email, password, name, genderId);
+          handleSignUp(email, password, name);
         }
       }
     };
@@ -65,7 +55,7 @@ const SignUpContainer = () => {
     return () => {
       document.removeEventListener("keydown", listener);
     };
-  }, [email, password, name, genderId]);
+  }, [email, password, name]);
   //회원가입
   const handleSignUp = async () => {
     try {
@@ -83,7 +73,6 @@ const SignUpContainer = () => {
     emailError.current.classList.add("hidden");
     passwordError.current.classList.add("hidden");
     nameError.current.classList.add("hidden");
-    genderIdError.current.classList.add("hidden");
   };
 
   return (
@@ -91,20 +80,16 @@ const SignUpContainer = () => {
       email={email}
       password={password}
       name={name}
-      genderId={genderId}
       onChangeEmail={onChangeEmail}
       onChangeUserPw={onChangeUserPw}
       onChangeUserName={onChangeUserName}
-      onChangeUserGenderId={onChangeUserGenderId}
       emailInput={emailInput}
       passwordInput={passwordInput}
       nameInput={nameInput}
-      genderIdInput={genderIdInput}
       handleSignUp={handleSignUp}
       emailError={emailError}
       passwordError={passwordError}
       nameError={nameError}
-      genderIdError={genderIdError}
     />
   );
 };
