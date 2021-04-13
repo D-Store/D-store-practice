@@ -1,0 +1,107 @@
+
+
+.errorMessage {
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0 -1px 8px 2px;
+    color: #ff1616;
+    text-align: left;
+}
+
+.signIn {
+    width: 100%;
+    min-height: 90vh;
+    background-color: #fff;
+}
+
+.signIn-form {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30vh;
+}
+
+.signIn-form-title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.signIn-input {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.signIn-input-item {
+    margin-top: 8px;
+    width: 320px;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #d7e2ed;
+    appearance: none;
+    outline: none;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.signIn-input-item::placeholder {
+    color: #d7e2ed;
+}
+
+.signIn-input-item:hover {
+    border-color: #0078ff;
+}
+
+.signIn-input-item:focus {
+    box-shadow: 0 0 25px -10px #0078ff;
+}
+
+
+.signIn-submit {
+    margin-top: 24px;
+    border-radius: 0.25rem;
+    background-color: #0078ff;
+    border: 1px solid #0078ff;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 320px;
+    height: 40px;
+    box-sizing: border-box;
+    outline: none;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 11.5px;
+}
+
+.another-approach {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.another-approach-item {
+    color: #98A8B9;
+}
+
+.another-approach-item-Link {
+    text-decoration: none;
+    margin-left: 10px;
+    color: black;
+}
+
+.another-approach-item-Link::after {
+    box-sizing: border-box;
+    position: absolute;
+    margin-left: 0.25rem;
+    content: "〉";
+    transition:all .15s;
+}
+
+.another-approach-item-Link:hover::after {
+    margin-left: 0.5rem;
+}
+
+.signIn-input-item::after {
+    
+}
