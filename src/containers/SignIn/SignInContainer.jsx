@@ -60,12 +60,13 @@ const SignInContainer = () => {
       } else {
         //서버 통신,토큰저장,페이지 라우팅
         const response = await AuthApi.login(email, password);
-        if (response.status === 200) {
-          localStorage.setItem("accessToken", response.data.token);
+        if (response.data.message === "로그인 성공") {
+          localStorage.setItem("accessToken", response.data.accessToken);
           if (email === "test" && password === "1234") {
             history.push("/admin/main");
           } else {
             history.push("/");
+            console.log(response);
           }
         } else {
           setPassword("");
