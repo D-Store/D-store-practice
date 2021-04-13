@@ -1,20 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PostApi from "../../assets/API/PostApi";
 import Main from "../../components/Main";
 
 const MainContainer = () => {
+  const [boradId, setBoradId] = useState([-1]);
+  const [isLoading, setIsLoading] = useState(false);
+
   const getPosting = async () => {
     try {
-      const response = await PostApi.getBoard([-1]);
+      setIsLoading(true);
+      const response = await PostApi.getBoard(boradId);
+
       console.log(response);
     } catch (err) {
       console.log(err);
     }
   };
 
-  useEffect(getPosting);
+  useEffect(() => {
+    getPosting().then();
+  });
 
-  return <Main />;
+  return <Main isLoading={isLoading} />;
 };
 
 export default MainContainer;

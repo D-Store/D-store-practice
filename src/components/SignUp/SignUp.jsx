@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import "./SignUp.css";
 
 const SignUp = ({
-  userId,
+  email,
   password,
   name,
   GenderId,
-  onChangeUserId,
+  onChangeemail,
   onChangeUserPw,
   onChangeUserName,
   onChangeUserGenderId,
-  userIdInput,
+  emailInput,
   passwordInput,
   nameInput,
   genderIdInput,
   handleSignUp,
-  userIdError,
+  emailError,
   passwordError,
   nameError,
   genderIdError,
@@ -30,12 +30,12 @@ const SignUp = ({
           <input
             className="signUp-form-input-item"
             type="text"
-            ref={userIdInput}
+            ref={emailInput}
             placeholder="아이디"
-            onChange={e => onChangeUserId(e)}
-            value={userId}
+            onChange={e => onChangeemail(e)}
+            value={email}
           />
-          <div ref={userIdError} className="signUp-form-input-error hidden">
+          <div ref={emailError} className="signUp-form-input-error hidden">
             아이디를 입력해주세요
           </div>
           <div className="signUp-form-input-title">비밀번호</div>
@@ -82,7 +82,7 @@ const SignUp = ({
         </div>
         <div className="signUp-form-signIn">
           <span className="signUp-form-signIn-item">
-            이미 계정이 있으신가요? <Link to="/signIn">로그인</Link>
+            이미 계정이 있으신가요? <Link to="/signIn">로그인::after</Link>
           </span>
         </div>
       </div>

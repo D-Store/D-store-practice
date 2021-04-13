@@ -10,14 +10,13 @@ class AuthApi {
 
     return response;
   }
-  async signUp(userId, password, name, genderId) {
+  async signUp(email, password, name) {
     const body = {
-      userId,
+      email,
       password,
       name,
-      genderId,
     };
-    const response = await axios.post(`${SERVER}/signup`, body);
+    const response = await axios.post(`${SERVER}/auth/create`, body);
 
     return response;
   }
