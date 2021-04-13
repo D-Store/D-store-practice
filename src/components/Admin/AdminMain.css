@@ -12,4 +12,7 @@
 
 .admin-main-text{
     border: 1px solid blue;
+    height: 300px;
+    display: flex;
+    justify-content: center;
 }
