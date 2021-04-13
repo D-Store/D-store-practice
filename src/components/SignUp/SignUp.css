@@ -59,6 +59,7 @@
 }
 
 .signUp-form-button-item {
+  transition: 0.2s ease-in;
   background-color: #0078ff;
   border: 1px solid #0078ff;
   border-radius: 0.25rem;
@@ -69,7 +70,13 @@
   height: 40px;
   box-sizing: border-box;
   outline: none;
+  cursor: pointer;
 }
+
+.signUp-form-button-item:hover {
+  background-color: #3995ff;
+}
+
 .signUp-form-signIn-itme-after {
   text-decoration: none;
   margin-left: 10px;

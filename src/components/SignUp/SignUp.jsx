@@ -12,26 +12,27 @@ const SignUp = ({
   emailInput,
   passwordInput,
   nameInput,
-  genderIdInput,
   handleSignUp,
   emailError,
   passwordError,
   nameError,
+  handleAuthEmail,
 }) => {
   return (
     <div className="signUp">
       <div className="signUp-form">
         <div className="signUp-form-title">회원가입</div>
         <div className="signUp-form-input">
-          <div className="signUp-form-input-title">아이디</div>
+          <div className="signUp-form-input-title">이메일</div>
           <input
             className="signUp-form-input-item"
             type="text"
             ref={emailInput}
-            placeholder="아이디"
+            placeholder="이메일"
             onChange={e => onChangeEmail(e)}
             value={email}
           />
+          <button onClick={handleAuthEmail}>이메일 인증</button>
           <div ref={emailError} className="signUp-form-input-error hidden">
             아이디를 입력해주세요
           </div>

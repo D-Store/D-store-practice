@@ -29,6 +29,34 @@ const SignUpContainer = () => {
   const onChangeUserName = e => {
     setName(e.target.value);
   };
+
+  const handleAuthEmail = async () => {
+    try {
+      const response = await AuthApi.authEmail(email);
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  //회원가입
+  const handleSignUp = async () => {
+    //입력 유무 확인
+    if (!email || !password || !name) {
+      alert("아직 작성하지 않은 사항이 있습니다.");
+      return;
+    }
+    //회원가입 시도
+    try {
+      const response = await AuthApi.signUp(email, password, name);
+      alert("회원가입을 성공하였습니다.");
+      console.log(response.status);
+      history.push("/");
+    } catch (err) {
+      console.log(err);
+      alert("회원가입을 실패하였습니다.");
+    }
+  };
   //Enter 시 포커싱 & 에러메세지
   useEffect(() => {
     const listener = e => {
@@ -56,18 +84,6 @@ const SignUpContainer = () => {
       document.removeEventListener("keydown", listener);
     };
   }, [email, password, name]);
-  //회원가입
-  const handleSignUp = async () => {
-    try {
-      const response = await AuthApi.signUp(email, password, name);
-      alert("회원가입을 성공하였습니다.");
-      console.log(response.status);
-      history.push("/");
-    } catch (err) {
-      console.log(err);
-      alert("회원가입을 실패하였습니다.");
-    }
-  };
   //에러메세지 제거
   const hiddenError = () => {
     emailError.current.classList.add("hidden");
@@ -90,6 +106,7 @@ const SignUpContainer = () => {
       emailError={emailError}
       passwordError={passwordError}
       nameError={nameError}
+      handleAuthEmail={handleAuthEmail}
     />
   );
 };
