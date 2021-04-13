@@ -6,35 +6,33 @@ const SignUp = ({
   email,
   password,
   name,
-  GenderId,
   onChangeEmail,
   onChangeUserPw,
   onChangeUserName,
-  onChangeUserGenderId,
   emailInput,
   passwordInput,
   nameInput,
-  genderIdInput,
   handleSignUp,
   emailError,
   passwordError,
   nameError,
-  genderIdError,
+  handleAuthEmail,
 }) => {
   return (
     <div className="signUp">
       <div className="signUp-form">
         <div className="signUp-form-title">회원가입</div>
         <div className="signUp-form-input">
-          <div className="signUp-form-input-title">아이디</div>
+          <div className="signUp-form-input-title">이메일</div>
           <input
             className="signUp-form-input-item"
             type="text"
             ref={emailInput}
-            placeholder="아이디"
+            placeholder="이메일"
             onChange={e => onChangeEmail(e)}
             value={email}
           />
+          <button onClick={handleAuthEmail}>이메일 인증</button>
           <div ref={emailError} className="signUp-form-input-error hidden">
             아이디를 입력해주세요
           </div>
@@ -62,18 +60,6 @@ const SignUp = ({
           <div ref={nameError} className="signUp-form-input-error hidden">
             이름을 입력해주세요
           </div>
-          <div className="signUp-form-input-title">성별</div>
-          <input
-            className="signUp-form-input-item"
-            type="text"
-            placeholder="성별(1,2)"
-            ref={genderIdInput}
-            onChange={e => onChangeUserGenderId(e)}
-            value={GenderId}
-          />
-          <div ref={genderIdError} className="signUp-form-input-error hidden">
-            성별을 입력해주세요
-          </div>
         </div>
         <div className="signUp-form-button">
           <button className="signUp-form-button-item" onClick={handleSignUp}>
@@ -82,7 +68,10 @@ const SignUp = ({
         </div>
         <div className="signUp-form-signIn">
           <span className="signUp-form-signIn-item">
-            이미 계정이 있으신가요? <Link to="/signIn">로그인</Link>
+            이미 계정이 있으신가요?{" "}
+            <Link className="signUp-form-signIn-itme-after" to="/signIn">
+              로그인
+            </Link>
           </span>
         </div>
       </div>

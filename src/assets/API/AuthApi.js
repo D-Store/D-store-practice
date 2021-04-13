@@ -20,6 +20,11 @@ class AuthApi {
 
     return response;
   }
+
+  async authEmail(email) {
+    const response = await axios.get(`${SERVER}/auth/send/email?mail=${email}`);
+    return response;
+  }
 }
 
 export default new AuthApi();

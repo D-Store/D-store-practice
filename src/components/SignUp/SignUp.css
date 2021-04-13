@@ -59,6 +59,7 @@
 }
 
 .signUp-form-button-item {
+  transition: 0.2s ease-in;
   background-color: #0078ff;
   border: 1px solid #0078ff;
   border-radius: 0.25rem;
@@ -69,6 +70,29 @@
   height: 40px;
   box-sizing: border-box;
   outline: none;
+  cursor: pointer;
+}
+
+.signUp-form-button-item:hover {
+  background-color: #3995ff;
+}
+
+.signUp-form-signIn-itme-after {
+  text-decoration: none;
+  margin-left: 10px;
+  color: black;
+}
+
+.signUp-form-signIn-itme-after::after {
+  box-sizing: border-box;
+  position: absolute;
+  margin-left: 0.25rem;
+  content: "〉";
+  transition: all 0.15s;
+}
+
+.signUp-form-signIn-itme-after:hover::after {
+  margin-left: 0.5rem;
 }
 
 .hidden {
