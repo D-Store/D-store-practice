@@ -10,14 +10,17 @@ const SignUpContainer = () => {
   //input
   const emailInput = useRef();
   const passwordInput = useRef();
+  const passwordAuthInput = useRef();
   const nameInput = useRef();
   //Error
   const emailError = useRef();
   const passwordError = useRef();
+  const passwordAuthError = useRef();
   const nameError = useRef();
   //input State
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordAuth, setPasswordAuth] = useState("");
   const [name, setName] = useState("");
   //setState on event
   const onChangeEmail = e => {
@@ -25,6 +28,9 @@ const SignUpContainer = () => {
   };
   const onChangeUserPw = e => {
     setPassword(e.target.value);
+  };
+  const onChangeUserPwA = e => {
+    setPasswordAuth(e.target.value);
   };
   const onChangeUserName = e => {
     setName(e.target.value);
@@ -48,6 +54,9 @@ const SignUpContainer = () => {
     //입력 유무 확인
     if (!email || !password || !name) {
       alert("아직 작성하지 않은 사항이 있습니다.");
+      return;
+    } else if (passwordAuth !== password) {
+      alert("비밀번호가 일치하지 않습니다.");
       return;
     }
     //회원가입 시도
@@ -73,6 +82,10 @@ const SignUpContainer = () => {
           passwordInput.current?.focus();
           hiddenError();
           passwordError.current.classList.toggle("hidden");
+        } else if (passwordAuth.length === 0) {
+          passwordAuthInput.current?.focus();
+          hiddenError();
+          passwordAuthError.current.classList.toggle("hidden");
         } else if (name.length === 0) {
           nameInput.current?.focus();
           hiddenError();
@@ -87,11 +100,12 @@ const SignUpContainer = () => {
     return () => {
       document.removeEventListener("keydown", listener);
     };
-  }, [email, password, name]);
+  }, [email, password, passwordAuth, name]);
   //에러메세지 제거
   const hiddenError = () => {
     emailError.current.classList.add("hidden");
     passwordError.current.classList.add("hidden");
+    passwordAuthError.current.classList.add("hidden");
     nameError.current.classList.add("hidden");
   };
 
@@ -99,16 +113,20 @@ const SignUpContainer = () => {
     <SignUp
       email={email}
       password={password}
+      passwordAuth={passwordAuth}
       name={name}
       onChangeEmail={onChangeEmail}
       onChangeUserPw={onChangeUserPw}
+      onChangeUserPwA={onChangeUserPwA}
       onChangeUserName={onChangeUserName}
       emailInput={emailInput}
       passwordInput={passwordInput}
+      passwordAuthInput={passwordAuthInput}
       nameInput={nameInput}
       handleSignUp={handleSignUp}
       emailError={emailError}
       passwordError={passwordError}
+      passwordAuthError={passwordAuthError}
       nameError={nameError}
       handleAuthEmail={handleAuthEmail}
     />

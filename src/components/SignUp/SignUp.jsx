@@ -5,23 +5,34 @@ import "./SignUp.css";
 const SignUp = ({
   email,
   password,
+  passwordAuth,
   name,
   onChangeEmail,
   onChangeUserPw,
+  onChangeUserPwA,
   onChangeUserName,
   emailInput,
   passwordInput,
+  passwordAuthInput,
   nameInput,
   handleSignUp,
   emailError,
   passwordError,
+  passwordAuthError,
   nameError,
   handleAuthEmail,
 }) => {
   return (
     <div className="signUp">
       <div className="signUp-form">
-        <div className="signUp-form-title">회원가입</div>
+        <div className="signUp-form-title">
+          <Link className="signUp-form-title-link" to="/">
+            D'store
+          </Link>
+          <div className="signUp-form-title-Subtitle">
+            D'store에서 자신만의 프로젝트를 공유해보세요.
+          </div>
+        </div>
         <div className="signUp-form-input">
           <div className="signUp-form-input-title">이메일</div>
           <div className="signUp-form-input-email">
@@ -56,6 +67,21 @@ const SignUp = ({
           />
           <div ref={passwordError} className="signUp-form-input-error hidden">
             비밀번호를 입력해주세요
+          </div>
+          <div className="signUp-form-input-title">비밀번호 확인</div>
+          <input
+            className="signUp-form-input-item"
+            type="text"
+            ref={passwordAuthInput}
+            placeholder="비밀번호 확인"
+            onChange={e => onChangeUserPwA(e)}
+            value={passwordAuth}
+          />
+          <div
+            ref={passwordAuthError}
+            className="signUp-form-input-error hidden"
+          >
+            비밀번호를 다시 입력해주세요.
           </div>
           <div className="signUp-form-input-title">이름</div>
           <input
