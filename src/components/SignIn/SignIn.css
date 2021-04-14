@@ -137,3 +137,15 @@
   text-align: center;
   position: relative;
 }
+
+.signIn-form-title-Link {
+  text-decoration: none;
+  color: black;
+}
+
+.signIn-form-title-subtitle {
+  font-weight: 350;
+  font-size: 14px;
+  color: #75777e;
+  margin-bottom: 20px;
+}

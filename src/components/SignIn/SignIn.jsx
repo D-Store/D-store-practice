@@ -18,7 +18,15 @@ const SignIn = ({
     <>
       <div className="signIn">
         <div className="signIn-form">
-          <div className="signIn-form-title">로그인</div>
+          <div className="signIn-form-title">
+            <Link className="signIn-form-title-Link" to="/">
+              D'store
+            </Link>
+            </div>
+            <div className="signIn-form-title-subtitle">
+              D'store에서 자신만의 프로젝트를 공유해보세요.
+            </div>
+          {/* 아래 주석 다른서비스 로그인 구현시 사용
           <div className="signIn-diver">
             <div className="signIn-diver-span">
               <div className="signIn-diver-line"></div>
@@ -26,7 +34,7 @@ const SignIn = ({
                 <span>또는</span>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="signIn-input">
             <div>
               <input
