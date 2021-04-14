@@ -5,8 +5,13 @@
 }
 
 .signUp-form-title {
+}
+
+.signUp-form-title-link {
   font-size: 2rem;
   font-weight: 600;
+  color: black;
+  text-decoration: none;
 }
 
 .signUp-form {
@@ -73,6 +78,11 @@
 
 .email-button {
   width: 60px;
+}
+
+.email-button:focus,
+.email-button:hover {
+  background-color: #3995ff;
 }
 
 .signUp-form-input-item:focus,
