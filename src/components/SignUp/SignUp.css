@@ -44,6 +44,37 @@
   padding-left: 10px;
 }
 
+.signUp-form-input-email {
+  display: flex;
+}
+
+.email-input {
+  width: 250px;
+  margin-right: auto;
+}
+
+.signUp-form-input-button {
+}
+
+.signUp-form-input-button-item {
+  transition: 0.2s ease-in;
+  background-color: #0078ff;
+  border: 1px solid #0078ff;
+  border-radius: 0.25rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 320px;
+  height: 40px;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+}
+
+.email-button {
+  width: 60px;
+}
+
 .signUp-form-input-item:focus,
 .signUp-form-input-item:hover {
   border-color: blue;
