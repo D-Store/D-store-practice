@@ -1,11 +1,11 @@
 import React from 'react'
+import AdminHeaderContainer from '../../../containers/Admin/Header/AdminHeaderContainer';
 import AdminMainContainer from '../../../containers/Admin/Main/AdminMainContainer';
-import HeaderContainer from '../../../containers/Header/HeaderContainer';
 
 const AdminMainPage = () => {
     return(
         <>
-        <HeaderContainer />
+        <AdminHeaderContainer />
         <AdminMainContainer />
         </>
     )

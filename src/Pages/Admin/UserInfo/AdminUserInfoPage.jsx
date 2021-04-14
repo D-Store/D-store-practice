@@ -1,11 +1,11 @@
 import React from 'react'
+import AdminHeaderContainer from '../../../containers/Admin/Header/AdminHeaderContainer';
 import AdminUserInfoContainer from '../../../containers/Admin/UserInfo/AdminUserInfoContainer';
-import HeaderContainer from '../../../containers/Header/HeaderContainer';
 
 const AdminUserInfoPage = () => {
     return(
         <>
-        <HeaderContainer />
+        <AdminHeaderContainer />
         <AdminUserInfoContainer />
         </>
     )

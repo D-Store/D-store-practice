@@ -21,7 +21,7 @@
 .header-nav {
   width: 100%;
   display: grid;
-  grid-template-columns: 90% 10%;
+  grid-template-columns: 90% 10% ;
   grid-template-areas: "func log";
 }
 

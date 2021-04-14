@@ -1,0 +1,49 @@
+.admin-header {
+    width: 100%;
+    min-height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0c151c;
+}
+
+.admin-header-main > a {
+    font-weight: 1000;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+  }
+
+  .admin-header-items {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-areas: "options log";
+  }
+
+  .admin-header-items-log {
+    grid-area: log;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .admin-header-items-options {
+     grid-area: options;
+     display: flex;
+     justify-content: center;
+  }
+
+  .admin-header-items-log > a,
+  .admin-header-items-options > a {
+      cursor: pointer;
+      color: rgb(131, 125, 125);
+      text-decoration: none;
+      padding: 0.3rem;
+      font-weight: 600;
+  }
+
+  .admin-header-items-log > a:hover,
+  .admin-header-items-options > a:hover {
+    color:white;
+  }
