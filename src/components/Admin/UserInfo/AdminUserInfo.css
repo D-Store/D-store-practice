@@ -18,7 +18,7 @@
 
 .admin-main-text{
     border: 1px solid rgb(150, 150, 150);
-    height: 107vh;
+    height: 108.5vh;
     width: 80%;
     text-align: center;
     margin-left: auto;
@@ -63,56 +63,60 @@
 }
 
 .admin-main-text-items {
-    border-bottom: 1px solid black;
     box-sizing: border-box;
     height: 10vh;
-    display: flex;
     align-items: center;
 }   
 
+.admin-main-text-items-form {
+    display: flex;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+}
+
 .admin-main-text-items-profile {
-    border: 1px solid red;
     width: 15%;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .admin-main-text-items-email {
-    border: 1px solid orange;
     width: 35%;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .admin-main-text-items-name {
-    border: 1px solid yellow;
     width: 20%;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .admin-main-text-items-check {
-    border: 1px solid green;
     width: 15%;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .admin-main-text-items-role {
-    border: 1px solid blue;
     width: 15%;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .admin-main-page-div {

@@ -94,13 +94,13 @@
 .another-approach-item-Link::after {
   box-sizing: border-box;
   position: absolute;
-  margin-left: 0.25rem;
+  padding-left: 0.25rem;
   content: "〉";
   transition: all 0.15s;
 }
 
 .another-approach-item-Link:hover::after {
-  margin-left: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .signIn-diver {
