@@ -44,8 +44,9 @@ const SignUpContainer = () => {
     try {
       const response = await AuthApi.authEmail(email);
       console.log(response);
+      alert("이메일을 보냈습니다.");
     } catch (err) {
-      console.log(err);
+      alert("이메일을 보낼 수 없습니다.");
     }
   };
 

@@ -5,6 +5,9 @@
 }
 
 .signUp-form-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .signUp-form-title-link {
@@ -12,6 +15,12 @@
   font-weight: 600;
   color: black;
   text-decoration: none;
+}
+
+.signUp-form-title-Subtitle {
+  font-weight: 350;
+  font-size: 14px;
+  color: #75777e;
 }
 
 .signUp-form {
@@ -33,7 +42,6 @@
 }
 
 .signUp-form-input-title {
-  margin-top: 16px;
   padding-bottom: 6px;
 }
 
@@ -47,6 +55,7 @@
   border-radius: 0.25rem;
   box-sizing: border-box;
   padding-left: 10px;
+  margin-bottom: 16px;
 }
 
 .signUp-form-input-email {
