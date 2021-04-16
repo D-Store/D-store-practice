@@ -30,6 +30,14 @@ const AdminUserInfo = ({
                         어드민
                     </div>
                 </div>
+                <div className="admin-main-text-title-subTitle">
+                    <div className="admin-main-text-title-subTitle-profile">프로필</div>
+                    <div className="admin-main-text-title-subTitle-email">이메일</div>
+                    <div className="admin-main-text-title-subTitle-name">이름</div>
+                    <div className="admin-main-text-title-subTitle-check">이메일 인증여부</div>
+                    <div className="admin-main-text-title-subTitle-role">역할</div>
+                    <div className="admin-main-text-title-subTitle-delete">유저 삭제</div>
+                </div>
                 <div className="admin-main-text-items">
                     <div className="admin-main-text-items-form">
                     </div>
@@ -51,6 +59,9 @@ const AdminUserInfo = ({
                                 </div>
                                 <div className="admin-main-text-items-role">
                                     역할 체크박스
+                                </div>
+                                <div className="admin-main-text-items-delete">
+                                    삭제 버튼
                                 </div>
                             </div>
                             </>

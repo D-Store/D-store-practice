@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import AdminUserInfo from '../../../components/Admin/UserInfo/AdminUserInfo';
 import UserListApi from "../../../assets/API/Admin/UserListApi"
-import AdminUserInfoPagination from '../../../components/Admin/Pagination/AdminUserInfoPagination';
 
 const AdminUserInfoContainer = () => {
     //css 관리를 위한 useState

@@ -32,18 +32,30 @@
      grid-area: options;
      display: flex;
      justify-content: center;
+     
   }
-
-  .admin-header-items-log > a,
-  .admin-header-items-options > a {
-      cursor: pointer;
-      color: rgb(131, 125, 125);
-      text-decoration: none;
-      padding: 0.3rem;
-      font-weight: 600;
+  
+  .admin-header-items-log > a {
+    cursor: pointer;
+    color: rgb(131, 125, 125);
+    text-decoration: none;
+    padding: 0.3rem;
+    font-weight: 600;
   }
-
+  
   .admin-header-items-log > a:hover,
   .admin-header-items-options > a:hover {
+    color:white;
+  }
+  
+  .admin-header-items-options-Link {
+    cursor: pointer;
+    color: rgb(131, 125, 125);
+    text-decoration: none;
+    padding: 0.3rem;
+    font-weight: 600;
+  }
+  
+  .headerClicked {
     color:white;
   }

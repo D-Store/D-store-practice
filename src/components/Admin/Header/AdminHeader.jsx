@@ -1,18 +1,45 @@
 import React from 'react';
-import { Link } from "react-router-dom"; 
+import { Link ,NavLink} from "react-router-dom"; 
 import './AdminHeader.css'
 
-const AdminHeader = ({handleLogOut}) => {
+const AdminHeader = ({
+    handleLogOut,
+    onClickChangeUserInfoCss,
+    changeClassUserInfo
+}) => {
+    const activeStyle={
+        color : 'white'
+    }
+    
     return(
         <div className="admin-header">
             <div className="admin-header-main">
-                <Link to="/admin/main">D'store</Link>
+                <Link to="/admin">D'store</Link>
             </div>
             <div className="admin-header-items">
                 <div className="admin-header-items-options">
-                    <Link to="/">글쓰기</Link>
-                    <Link to="/">내정보</Link>
-                    <Link to="/admin/userInfo">유저 정보</Link>
+                    <NavLink 
+                    className="admin-header-items-options-Link"
+                    to="/signUp"
+                    activeStyle={activeStyle}
+                    >
+                        글쓰기
+                    </NavLink>
+                    <NavLink 
+                    className="admin-header-items-options-Link" 
+                    to="/signIn"
+                    activeStyle={activeStyle}
+                    >
+                        내정보
+                    </NavLink>
+                    <NavLink 
+                    className="admin-header-items-options-Link" 
+                    onClick={onClickChangeUserInfoCss}
+                    to="/admin/userInfo"
+                    activeStyle={activeStyle}
+                    >
+                        유저 정보
+                    </NavLink>
                 </div>
                 <div className="admin-header-items-log">
                     <a href="/" onClick={()=> handleLogOut()}>
