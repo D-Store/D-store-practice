@@ -1,11 +1,11 @@
 import React from "react";
 import "./Main.css";
 
-const Main = () => {
+const Main = ({ bannerPage, postPage }) => {
   return (
     <div className="main">
-      <div className="main-banner" />
-      <div className="main-posting">
+      <div className="main-banner" ref={bannerPage} />
+      <div className="main-posting" ref={postPage}>
         <div className="main-posting-item">
           <div className="main-posting-item-img"></div>
           <div className="main-posting-item-img"></div>
