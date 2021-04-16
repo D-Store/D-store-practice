@@ -1,6 +1,9 @@
 import React from 'react'
 import './AdminUserInfo.css'
-import circle from "../../../assets/images/circle.png"
+import check from "../../../assets/images/check.png"
+import falseCheck from "../../../assets/images/falseCheck.png"
+import userPng from "../../../assets/images/user.png"
+import close from "../../../assets/images/close.png"
 
 const AdminUserInfo = ({
     changeClassUser,
@@ -8,10 +11,12 @@ const AdminUserInfo = ({
     onClickChangeUserCss,
     onClickChangeAdminCss,
     currentUser,
-    getUserListMap
+    getUserListMap,
+    deleteUsers
 }) => {
     console.log(currentUser)
     return(
+        
         <div className="admin-main-form">
             <div className="admin-main-title">
                     유저 정보
@@ -44,7 +49,11 @@ const AdminUserInfo = ({
                             <>
                             <div className="admin-main-text-items-form">
                                 <div className="admin-main-text-items-profile">
-                                프로필
+                                <img 
+                                className="admin-main-text-items-profile-img"
+                                src={userPng}
+                                style={currentUser.profileImage?{display:"none"}:{display:"block"}}
+                                />
                                 </div>
                                 <div className="admin-main-text-items-email">
                                     {currentUser.email}
@@ -53,16 +62,29 @@ const AdminUserInfo = ({
                                     {currentUser.name}
                                 </div>
                                 <div className="admin-main-text-items-check">
-                                    인증여부
-                                    <div className="admin-main-text-items-check">
-                                        <img src={circle} alt=''/>
-                                    </div>
+                                        <img 
+                                        className="admin-main-text-items-check-img" 
+                                        src={check} 
+                                        style={currentUser.mailAccess?{display:"block"}:{display:"none"}}
+                                        alt=''
+                                        />
+                                        <img 
+                                        className="admin-main-text-items-check-img" 
+                                        src={falseCheck} 
+                                        style={currentUser.mailAccess?{display:"none"}:{display:"block"}}
+                                        alt=""/>
                                 </div>
                                 <div className="admin-main-text-items-role">
                                     역할 박스
                                 </div>
-                                <div className="admin-main-text-items-delete">
-                                    삭제 버튼
+                                <div 
+                                className="admin-main-text-items-delete">
+                                    <img 
+                                    className="admin-main-text-items-delete-btn" 
+                                    src={close}
+                                    onClick={()=>{deleteUsers(currentUser.id)}}
+                                    alt=""
+                                    />
                                 </div>
                             </div>
                             </>

@@ -9,6 +9,13 @@ class UserListApi {
 
         return response;
     }
+
+    async deleteUser(id) {
+
+        const response = await axios.delete(`${SERVER}/admin/deleteuser?id=${id}`)
+
+        return response
+    }
 }
 
 export default new UserListApi();

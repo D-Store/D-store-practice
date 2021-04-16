@@ -141,6 +141,14 @@
     align-items: center;
     box-sizing: border-box;
     font-size: 15px;
+
+}
+
+.admin-main-text-items-delete-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
 }
 
 
@@ -214,5 +222,12 @@
     box-sizing: border-box;
 }
 
+.admin-main-text-items-check-img {
+    width: 50px;
+    display: inline-block;
+}
 
+.admin-main-text-items-profile-img {
+    width: 50px;
+}
 
