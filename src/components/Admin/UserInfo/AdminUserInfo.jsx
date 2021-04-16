@@ -1,5 +1,6 @@
 import React from 'react'
 import './AdminUserInfo.css'
+import circle from "../../../assets/images/circle.png"
 
 const AdminUserInfo = ({
     changeClassUser,
@@ -9,7 +10,7 @@ const AdminUserInfo = ({
     currentUser,
     getUserListMap
 }) => {
-
+    console.log(currentUser)
     return(
         <div className="admin-main-form">
             <div className="admin-main-title">
@@ -38,9 +39,6 @@ const AdminUserInfo = ({
                     <div className="admin-main-text-title-subTitle-role">역할</div>
                     <div className="admin-main-text-title-subTitle-delete">유저 삭제</div>
                 </div>
-                <div className="admin-main-text-items">
-                    <div className="admin-main-text-items-form">
-                    </div>
                     {
                         currentUser.map((currentUser)=> 
                             <>
@@ -56,9 +54,12 @@ const AdminUserInfo = ({
                                 </div>
                                 <div className="admin-main-text-items-check">
                                     인증여부
+                                    <div className="admin-main-text-items-check">
+                                        <img src={circle} alt=''/>
+                                    </div>
                                 </div>
                                 <div className="admin-main-text-items-role">
-                                    역할 체크박스
+                                    역할 박스
                                 </div>
                                 <div className="admin-main-text-items-delete">
                                     삭제 버튼
@@ -67,7 +68,6 @@ const AdminUserInfo = ({
                             </>
                         )
                     }
-                </div>
             </div>
             <div className="admin-main-page-div">
                 {getUserListMap}
