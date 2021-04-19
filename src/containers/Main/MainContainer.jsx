@@ -6,7 +6,6 @@ const MainContainer = () => {
   const bannerPage = useRef();
   const postPage = useRef();
 
-  const [scrollPoint, setScrollPoint] = useState(0);
   const [boradId, setBoradId] = useState([-1]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -44,11 +43,7 @@ const MainContainer = () => {
       window.removeEventListener("wheel", handleScroll, true);
       // 해당 컴포넌트가 언마운트 될때, 스크롤 이벤트를 제거합니다.
     };
-  }, [scrollPoint]);
-
-  //   useEffect(() => {
-  //     getPosting().then();
-  //   });
+  }, []);
 
   return (
     <Main isLoading={isLoading} bannerPage={bannerPage} postPage={postPage} />
