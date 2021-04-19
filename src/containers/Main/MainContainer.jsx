@@ -45,8 +45,17 @@ const MainContainer = () => {
     };
   }, []);
 
+  const handleNextPosting = () => {
+    console.log("next");
+  };
+
   return (
-    <Main isLoading={isLoading} bannerPage={bannerPage} postPage={postPage} />
+    <Main
+      isLoading={isLoading}
+      bannerPage={bannerPage}
+      postPage={postPage}
+      handleNextPosting={handleNextPosting}
+    />
   );
 };
 
