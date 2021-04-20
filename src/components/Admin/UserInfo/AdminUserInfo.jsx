@@ -44,7 +44,7 @@ const AdminUserInfo = ({
                     <div className="admin-main-text-title-subTitle-role">역할</div>
                     <div className="admin-main-text-title-subTitle-delete">유저 삭제</div>
                 </div>
-                    {
+                    {   changeClassUser ?
                         currentUser.map((currentUser)=> 
                             <>
                             <div className="admin-main-text-items-form">
@@ -88,7 +88,7 @@ const AdminUserInfo = ({
                                 </div>
                             </div>
                             </>
-                        )
+                        ): <div>asdf</div>
                     }
             </div>
             <div className="admin-main-page-div">
