@@ -1,0 +1,12 @@
+.posting {
+  padding-top: 7vh;
+  min-height: 100vh;
+}
+
+.posting-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.posting-form {
+}

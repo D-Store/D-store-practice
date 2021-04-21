@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../components/common/Header";
+import Header from "../../containers/Header/HeaderContainer";
 import PostingContainer from "../../containers/Posting/PostingContainer";
 
 const PostingPage = () => {
