@@ -4,8 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #0c151c00;
-  position: absolute;
+  background-blend-mode: multiply;
+  background-color: #ffffff00;
+  position: fixed;
   z-index: 10;
 }
 
@@ -16,7 +17,7 @@
   font-weight: bold;
   font-size: 1.5rem;
   cursor: pointer;
-  color: white;
+  color: dimgray;
   text-decoration: none;
 }
 

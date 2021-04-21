@@ -8,7 +8,9 @@ const MainContainer = () => {
 
   const [boradId, setBoradId] = useState([-1]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isScroll, setIsScroll] = useState(false);
+  let isScroll = false;
+
+  // const [isScroll, setIsScroll] = useState(false);
 
   const getPosting = async () => {
     try {
@@ -20,29 +22,32 @@ const MainContainer = () => {
     }
   };
 
-  const handleScroll = useCallback(e => {
-    // 브라우저 총 내용의 크기 (스크롤을 포함한다)
-    const { scrollHeight } = document.body;
-    // 현재 스크롤바의 위치
-    const { scrollTop } = document.documentElement;
-    if (e.deltaY > 0) {
-      //페이지 다운할때
-      bannerPage.current.classList.add("backPage");
-      postPage.current.classList.add("backPage");
-      console.log(isScroll);
-      e.preventDefault();
-
-      setTimeout(() => {
-        setIsScroll(true);
-      }, 700);
-      return;
-    } else if (scrollHeight / 100 > scrollTop) {
-      //전체 height/100 만큼 스크롤 했을때
-      setIsScroll(false);
-      bannerPage.current.classList.remove("backPage");
-      postPage.current.classList.remove("backPage");
-    }
-  }, []);
+  const handleScroll = useCallback(
+    e => {
+      // 브라우저 총 내용의 크기 (스크롤을 포함한다)
+      const { scrollHeight } = document.body;
+      // 현재 스크롤바의 위치
+      const { scrollTop } = document.documentElement;
+      if (e.deltaY > 0) {
+        //페이지 다운할때
+        bannerPage.current.classList.add("backPage");
+        postPage.current.classList.add("backPage");
+        console.log(isScroll);
+        if (!isScroll) {
+          e.preventDefault();
+        }
+        setTimeout(() => {
+          isScroll = true;
+        }, 700);
+      } else if (scrollHeight / 100 > scrollTop) {
+        //전체 height/100 만큼 스크롤 했을때
+        isScroll = false;
+        bannerPage.current.classList.remove("backPage");
+        postPage.current.classList.remove("backPage");
+      }
+    },
+    [isScroll]
+  );
 
   useEffect(() => {
     console.log("in", isScroll);
