@@ -8,6 +8,7 @@ const MainContainer = () => {
 
   const [boradId, setBoradId] = useState([-1]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isScroll, setIsScroll] = useState(false);
 
   const getPosting = async () => {
     try {
@@ -28,22 +29,31 @@ const MainContainer = () => {
       //페이지 다운할때
       bannerPage.current.classList.add("backPage");
       postPage.current.classList.add("backPage");
+      console.log(isScroll);
+      e.preventDefault();
+
+      setTimeout(() => {
+        setIsScroll(true);
+      }, 700);
+      return;
     } else if (scrollHeight / 100 > scrollTop) {
       //전체 height/100 만큼 스크롤 했을때
+      setIsScroll(false);
       bannerPage.current.classList.remove("backPage");
       postPage.current.classList.remove("backPage");
     }
   }, []);
 
   useEffect(() => {
-    window.addEventListener("wheel", handleScroll, true);
+    console.log("in", isScroll);
+    window.addEventListener("wheel", handleScroll, { passive: isScroll });
     // 스크롤이 발생할때마다 handleScroll 함수를 호출하도록 추가합니다.
-
     return () => {
-      window.removeEventListener("wheel", handleScroll, true);
+      console.log("out");
+      window.removeEventListener("wheel", handleScroll, { passive: true });
       // 해당 컴포넌트가 언마운트 될때, 스크롤 이벤트를 제거합니다.
     };
-  }, []);
+  }, [isScroll]);
 
   const handleNextPosting = () => {
     console.log("next");

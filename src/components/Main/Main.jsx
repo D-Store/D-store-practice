@@ -25,19 +25,19 @@ const Main = ({ bannerPage, postPage, handleNextPosting }) => {
             </div>
           </div>
           <div className="main-posting-item">
-            <Link className="link">
+            <Link className="link" to="/">
               <div className="main-posting-item-img"></div>
               <div className="mina-posting-item-img">제목</div>
             </Link>
-            <Link className="link">
+            <Link className="link" to="/">
               <div className="main-posting-item-img"></div>
               <div className="mina-posting-item-img">제목</div>
             </Link>
-            <Link className="link">
+            <Link className="link" to="/">
               <div className="main-posting-item-img"></div>
               <div className="mina-posting-item-img">제목</div>
             </Link>
-            <Link className="link">
+            <Link className="link" to="/">
               <div className="main-posting-item-img"></div>
               <div className="mina-posting-item-img">제목</div>
             </Link>
