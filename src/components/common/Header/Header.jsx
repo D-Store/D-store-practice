@@ -20,6 +20,7 @@ const Header = ({ isLogin, handleLogOut }) => {
           <div className="header-nav-function">
             <Link to="/signIn">글쓰기</Link>
             <Link to="/signUp">내정보</Link>
+            <Link to="/posting">프로젝트 생성</Link>
             <Link to="/profile">프로필</Link>
           </div>
           <div className="header-nav-log">
