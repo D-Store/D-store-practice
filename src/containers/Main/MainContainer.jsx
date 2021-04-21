@@ -30,8 +30,10 @@ const MainContainer = () => {
       const { scrollTop } = document.documentElement;
       if (e.deltaY > 0) {
         //페이지 다운할때
-        bannerPage.current.classList.add("backPage");
-        postPage.current.classList.add("backPage");
+        setTimeout(() => {
+          bannerPage.current.classList.add("backPage");
+          postPage.current.classList.add("backPage");
+        }, 200);
         console.log(isScroll);
         if (!isScroll) {
           e.preventDefault();
@@ -42,8 +44,10 @@ const MainContainer = () => {
       } else if (scrollHeight / 100 > scrollTop) {
         //전체 height/100 만큼 스크롤 했을때
         isScroll = false;
-        bannerPage.current.classList.remove("backPage");
-        postPage.current.classList.remove("backPage");
+        setTimeout(() => {
+          bannerPage.current.classList.remove("backPage");
+          postPage.current.classList.remove("backPage");
+        }, 200);
       }
     },
     [isScroll]
