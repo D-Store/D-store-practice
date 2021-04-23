@@ -10,3 +10,11 @@
 
 .posting-form {
 }
+
+.ck-file-dialog-button {
+  display: none;
+}
+
+.ck-dropdown__button {
+  display: none;
+}
