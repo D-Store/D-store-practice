@@ -1,6 +1,6 @@
 .header {
   min-width: 100%;
-  min-height: 7vh;
+  height: 7vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,22 +11,23 @@
   top: 0;
 }
 
-.header-main {
+.header-nav {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-areas: "main func log";
 }
 
-.header-main > a {
+.header-main {
+  grid-area: main;
+}
+
+.header-nav-main > a {
   font-weight: bold;
   font-size: 1.5rem;
   cursor: pointer;
   color: dimgray;
   text-decoration: none;
-}
-
-.header-nav {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 90% 10%;
-  grid-template-areas: "func log";
 }
 
 .header-nav-log {
@@ -53,4 +54,28 @@
 .header-nav-log > a:hover,
 .header-nav-function > a:hover {
   color: #c83cf9;
+}
+
+@media screen and (max-height: 250px) {
+  .header {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header-nav-log {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .header-nav-main {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 312px) {
+  .header-nav-function {
+    display: none;
+  }
 }
