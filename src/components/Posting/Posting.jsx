@@ -50,12 +50,25 @@ const Posting = ({
               }}
             />
             <div className="posting-form-content-img">
+              <label for="ex_file">업로드</label>
               <input
                 type="file"
+                id="ex_file"
                 className="posting-form-content-img-item"
                 accept="image/jpg,image/png"
                 onChange={onChangeImg}
               />
+            </div>
+            <div className="posting-form-content-slider">
+              <ul className="posting-form-content-slider-ul">
+                <li className="posting-form-content-slider-ul-li" />
+                <li className="posting-form-content-slider-ul-li" />
+                <li className="posting-form-content-slider-ul-li" />
+                <li className="posting-form-content-slider-ul-li" />
+                <li className="posting-form-content-slider-ul-li" />
+                <li className="posting-form-content-slider-ul-li" />
+                <li className="posting-form-content-slider-ul-li" />
+              </ul>
             </div>
           </div>
           <div className="posting-form-submit">

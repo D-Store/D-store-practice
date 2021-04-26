@@ -11,6 +11,24 @@
 .posting-form {
 }
 
+.posting-form-title {
+  width: 100%;
+  margin-bottom: 5vh;
+}
+
+.posting-form-title-item {
+  box-sizing: border-box;
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #c4c4c4;
+  border-radius: 3px;
+  font-size: 1.5rem;
+}
+
+.posting-form-content-item > {
+  width: 10%;
+}
+
 .ck-file-dialog-button {
   display: none;
 }
@@ -18,3 +36,105 @@
 .ck-dropdown__button {
   display: none;
 }
+
+.posting-form-content-img {
+  width: 100%;
+}
+
+.posting-form-content-img input {
+  border: none;
+  width: 100%;
+}
+
+.posting-form-content-img label {
+  display: inline-block;
+  transition: 0.2s ease-in;
+  padding: 0.5em 0.75em;
+  color: white;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #0078ff;
+  cursor: pointer;
+  border: 1px solid #0078ff;
+  border-bottom-color: #0078ff;
+  border-radius: 3px;
+}
+
+.posting-form-content-img label:hover {
+  background-color: #3995ff;
+}
+
+.posting-form-content-img-item {
+  /* 파일 필드 숨기기 */
+  display: none;
+}
+
+.posting-form-content-slider {
+  width: 100%;
+}
+
+.posting-form-content-slider-ul {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: auto;
+  border: 1px solid rgb(210, 210, 210);
+  background-color: rgb(250, 250, 250);
+  box-sizing: border-box;
+}
+
+.posting-form-content-slider-ul-li {
+  list-style: none;
+  min-width: 240px;
+  height: 160px;
+  background-image: url("https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile28.uf.tistory.com%2Fimage%2F99A059345B17BBE006B4CD");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.posting-form-content-slider-ul-li:nth-child(2) {
+  background-image: url("https://pbs.twimg.com/media/EhUlB9RU0AccQvY.jpg:large");
+}
+
+.posting-form-content-slider-ul-li:nth-child(3) {
+  background-image: url("http://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2017/02/06/9c8f6e5e-95e2-4d88-b904-841b0be5fcc4.jpg");
+}
+
+.posting-form-content-slider-ul-li:nth-child(4) {
+  background-image: url("https://mocah.org/uploads/posts/346362-Seulgi-Kang-Seul-Gi-Red-Velvet-K-Pop-Kpop-Girls.jpg");
+}
+
+.posting-form-content-slider-ul-li:nth-child(5) {
+  background-image: url("https://images2.imgbox.com/d9/af/Ekr9db87_o.jpg");
+}
+
+.posting-form-content-slider-ul-li:nth-child(6) {
+  background-image: url("http://image.tving.com/upload/smr/clip/C11/2021/02/07/C01_D727899.jpg");
+}
+
+.posting-form-submit {
+  width: 100%;
+}
+
+.posting-form-submit-item {
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  color: white;
+  font-size: 1.2rem;
+  padding: 8px;
+  border: 1px solid #0078ff;
+  background-color: #0078ff;
+  border-radius: 3px;
+}
+
+.posting-form-submit-item:hover {
+  background-color: #3995ff;
+}
+
+/* .image-style-side {
+  float: right;
+} */

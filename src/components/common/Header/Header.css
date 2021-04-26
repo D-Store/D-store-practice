@@ -4,11 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-blend-mode: multiply;
   background-color: #00000000;
   position: absolute;
   z-index: 10;
   top: 0;
+  /* backdrop-filter: saturate(200%) blur(10px); */
 }
 
 .header-nav {
