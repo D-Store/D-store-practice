@@ -117,7 +117,22 @@
 }
 
 @media screen and (max-width: 480px) {
+  .main-posting-header-title {
+    width: 100%;
+  }
+  .main-posting-header-nav {
+    width: 100%;
+  }
+  .link {
+    width: 100%;
+  }
   .main-posting-item-img {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 100px) {
+  .main-posting-header {
+    display: none;
   }
 }

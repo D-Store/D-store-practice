@@ -14,7 +14,6 @@ const HeaderContainer = () => {
     } else {
       setIsLogin(true);
     }
-    console.log("a");
   });
 
   const handleLogOut = () => {
