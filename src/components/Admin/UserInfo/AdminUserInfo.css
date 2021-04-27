@@ -231,3 +231,68 @@
     width: 50px;
 }
 
+.admin-main-text-items-admin-profile {
+    width: 12%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-right: 1px solid #d2d2d2;
+    font-size: 14px;
+}
+
+.admin-main-text-items-admin-email {
+    width: 35%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-right: 1px solid #d2d2d2;
+    font-size: 15px;
+}
+
+.admin-main-text-items-admin-name {
+    width: 16%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-right: 1px solid #d2d2d2;
+    font-size: 15px;
+}
+
+.admin-main-text-items-admin-check {
+    width: 14%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-right: 1px solid #d2d2d2;
+    font-size: 15px;
+}
+
+.admin-main-text-items-admin-role {
+    width: 10%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-right: 1px solid #d2d2d2;
+    font-size: 14px;
+}
+
+.admin-main-text-items-admin-delete {
+    width: 13%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 15px;
+
+}

@@ -88,7 +88,26 @@ const AdminUserInfo = ({
                                 </div>
                             </div>
                             </>
-                        ): <div>asdf</div>
+                        ):  <div className="admin-main-text-items-form">
+                                <div className="admin-main-text-items-admin-profile">
+                                    프로필
+                                </div>
+                                <div className="admin-main-text-items-admin-email">
+                                    text@naver.com
+                                </div>
+                                <div className="admin-main-text-items-admin-name">
+                                    테스트이름
+                                </div>
+                                <div className="admin-main-text-items-admin-check">
+                                    이메일 인증
+                                </div>
+                                <div className="admin-main-text-items-admin-role">
+                                    역할
+                                </div>
+                                <div className="admin-main-text-items-admin-delete">
+                                    삭제 버튼
+                                </div>
+                            </div>
                     }
             </div>
             <div className="admin-main-page-div">
