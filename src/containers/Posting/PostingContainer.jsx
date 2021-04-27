@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import PostApi from "../../assets/API/PostApi";
 import Posting from "../../components/Posting";
 
 const PostingContainer = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState();
+  const [users, setUsers] = useState([]);
   const [img, setImg] = useState("");
   const [imgs, setImgs] = useState([]);
 
@@ -19,10 +21,17 @@ const PostingContainer = () => {
     setImg(e.target.files[0]);
   };
 
-  const handlePosting = () => {
-    const formData = new FormData();
-    formData.append("file", img);
-    console.log(title, formData, content, formData.get("file"));
+  const handlePosting = async () => {
+    const file = new FormData();
+    file.append("file", img);
+    console.log(title, content, users, file);
+    await PostApi.CreateBoard(title, content, users, file)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
   const postImgs = () => {
     setImgs([

@@ -1,27 +1,30 @@
 import axios from "axios";
 import { SERVER } from "../../config/config.json";
 class PostApi {
-  async getBoard(boardIds) {
-    const response = await axios.get(`${SERVER}/board?boardIds=[${boardIds}]`, {
-      headers: {
-        Authorization: localStorage.getItem("accessToken"),
-      },
-    });
+  async getBoard(page, size, sort) {
+    const response = await axios.get(
+      `${SERVER}/list?page=[${page}]&size=[${size}]&sort=[${sort}]`
+      // {
+      //   headers: {
+      //     Authorization: localStorage.getItem("accessToken"),
+      //   },
+      // }
+    );
 
     return response;
   }
 
-  async CreateBoard(date, contents, profile, show) {
+  async CreateBoard(title, content, users, file) {
     const body = {
-      date,
-      contents,
-      profile,
-      show,
+      title,
+      content,
+      users,
+      file,
     };
-    const response = await axios.post(`${SERVER}/board`, body, {
+    const response = await axios.post(`${SERVER}/project/create`, body, {
       headers: {
         Authorization: localStorage.getItem("accessToken"),
-        "content-type": "multipart/form-data",
+        // "content-type": "multipart/form-data",
       },
     });
 

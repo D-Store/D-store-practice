@@ -1,0 +1,9 @@
+.profile {
+  padding-top: 7vh;
+  min-height: 100vh;
+}
+
+.profil-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
