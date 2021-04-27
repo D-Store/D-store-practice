@@ -28,7 +28,7 @@ const MainContainer = () => {
       const { scrollHeight } = document.body;
       // 현재 스크롤바의 위치
       const { scrollTop } = document.documentElement;
-      if (e.deltaY > 0) {
+      if (e.deltaY > 0 && e.deltaX === 0) {
         //페이지 다운할때
         setTimeout(() => {
           bannerPage.current.classList.add("backPage");
@@ -41,7 +41,7 @@ const MainContainer = () => {
         setTimeout(() => {
           isScroll = true;
         }, 700);
-      } else if (scrollHeight / 100 > scrollTop) {
+      } else if (scrollHeight / 100 > scrollTop && e.deltaY < 0) {
         //전체 height/100 만큼 스크롤 했을때
         isScroll = false;
         setTimeout(() => {
