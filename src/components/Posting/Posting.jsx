@@ -51,6 +51,27 @@ const Posting = ({
                 console.log("Focus.", editor);
               }}
             />
+
+            <div className="posting-form-content-slider">
+              <ul className="posting-form-content-slider-ul">
+                {/* <li
+                  className="posting-form-content-slider-ul-li"
+                
+                ></li> */}
+                {imgs.map((currentImg, key) => {
+                  return (
+                    <li
+                      className="posting-form-content-slider-ul-li"
+                      style={{
+                        "background-image": `url(${currentImg.imgUrl})`,
+                      }}
+                      src={currentImg.imgUrl}
+                      alt={`이미지${key}`}
+                    />
+                  );
+                })}
+              </ul>
+            </div>
             <div className="posting-form-content-img">
               <label htmlFor="ex_file">업로드</label>
               <input
@@ -61,19 +82,6 @@ const Posting = ({
                 onChange={onChangeImg}
                 onClick={postImgs}
               />
-            </div>
-            <div className="posting-form-content-slider">
-              <ul className="posting-form-content-slider-ul">
-                {imgs.map((currentImg, key) => {
-                  return (
-                    <img
-                      className="posting-form-content-slider-ul-li"
-                      src={currentImg.imgUrl}
-                      alt={`이미지${key}`}
-                    />
-                  );
-                })}
-              </ul>
             </div>
           </div>
           <div className="posting-form-submit">

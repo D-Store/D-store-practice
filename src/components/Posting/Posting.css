@@ -59,6 +59,7 @@
   border: 1px solid #0078ff;
   border-bottom-color: #0078ff;
   border-radius: 3px;
+  margin-bottom: 5vh;
 }
 
 .posting-form-content-img label:hover {
@@ -72,10 +73,12 @@
 
 .posting-form-content-slider {
   width: 100%;
+  height: 160px;
 }
 
 .posting-form-content-slider-ul {
   width: 100%;
+  height: 160px;
   padding: 0;
   display: flex;
   justify-content: flex-start;
@@ -89,7 +92,6 @@
   list-style: none;
   min-width: 240px;
   height: 160px;
-  background-image: url("https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile28.uf.tistory.com%2Fimage%2F99A059345B17BBE006B4CD");
   background-size: cover;
   background-position: 50% 50%;
 }
