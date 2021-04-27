@@ -94,26 +94,6 @@
   background-position: 50% 50%;
 }
 
-.posting-form-content-slider-ul-li:nth-child(2) {
-  background-image: url("https://pbs.twimg.com/media/EhUlB9RU0AccQvY.jpg:large");
-}
-
-.posting-form-content-slider-ul-li:nth-child(3) {
-  background-image: url("http://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2017/02/06/9c8f6e5e-95e2-4d88-b904-841b0be5fcc4.jpg");
-}
-
-.posting-form-content-slider-ul-li:nth-child(4) {
-  background-image: url("https://mocah.org/uploads/posts/346362-Seulgi-Kang-Seul-Gi-Red-Velvet-K-Pop-Kpop-Girls.jpg");
-}
-
-.posting-form-content-slider-ul-li:nth-child(5) {
-  background-image: url("https://images2.imgbox.com/d9/af/Ekr9db87_o.jpg");
-}
-
-.posting-form-content-slider-ul-li:nth-child(6) {
-  background-image: url("http://image.tving.com/upload/smr/clip/C11/2021/02/07/C01_D727899.jpg");
-}
-
 .posting-form-submit {
   width: 100%;
 }

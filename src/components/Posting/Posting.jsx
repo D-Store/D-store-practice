@@ -13,6 +13,8 @@ const Posting = ({
   onChangeContent,
   onChangeImg,
   handlePosting,
+  postImgs,
+  imgs,
 }) => {
   return (
     <div className="posting">
@@ -57,17 +59,20 @@ const Posting = ({
                 className="posting-form-content-img-item"
                 accept="image/jpg,image/png"
                 onChange={onChangeImg}
+                onClick={postImgs}
               />
             </div>
             <div className="posting-form-content-slider">
               <ul className="posting-form-content-slider-ul">
-                <li className="posting-form-content-slider-ul-li" />
-                <li className="posting-form-content-slider-ul-li" />
-                <li className="posting-form-content-slider-ul-li" />
-                <li className="posting-form-content-slider-ul-li" />
-                <li className="posting-form-content-slider-ul-li" />
-                <li className="posting-form-content-slider-ul-li" />
-                <li className="posting-form-content-slider-ul-li" />
+                {imgs.map((currentImg, key) => {
+                  return (
+                    <img
+                      className="posting-form-content-slider-ul-li"
+                      src={currentImg.imgUrl}
+                      alt={`이미지${key}`}
+                    />
+                  );
+                })}
               </ul>
             </div>
           </div>
