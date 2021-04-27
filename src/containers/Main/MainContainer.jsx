@@ -28,26 +28,26 @@ const MainContainer = () => {
       const { scrollHeight } = document.body;
       // 현재 스크롤바의 위치
       const { scrollTop } = document.documentElement;
-      if (e.deltaY > 0 && e.deltaX === 0) {
+      console.log(e);
+      if (e.deltaY > 0) {
         //페이지 다운할때
         setTimeout(() => {
           bannerPage.current.classList.add("backPage");
           postPage.current.classList.add("backPage");
-        }, 200);
-        console.log(isScroll);
+        }, 100);
         if (!isScroll) {
           e.preventDefault();
         }
         setTimeout(() => {
           isScroll = true;
         }, 700);
-      } else if (scrollHeight / 100 > scrollTop && e.deltaY < 0) {
+      } else if (scrollHeight / 100 > scrollTop) {
         //전체 height/100 만큼 스크롤 했을때
         isScroll = false;
         setTimeout(() => {
           bannerPage.current.classList.remove("backPage");
           postPage.current.classList.remove("backPage");
-        }, 200);
+        }, 10);
       }
     },
     [isScroll]

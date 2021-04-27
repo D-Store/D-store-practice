@@ -50,7 +50,7 @@ const Posting = ({
               }}
             />
             <div className="posting-form-content-img">
-              <label for="ex_file">업로드</label>
+              <label htmlFor="ex_file">업로드</label>
               <input
                 type="file"
                 id="ex_file"
