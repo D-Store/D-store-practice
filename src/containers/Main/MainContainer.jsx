@@ -13,13 +13,14 @@ const MainContainer = () => {
   // const [isScroll, setIsScroll] = useState(false);
 
   const getPosting = async () => {
-    try {
-      setIsLoading(true);
-      const response = await PostApi.getBoard(boradId);
-      console.log(response);
-    } catch (err) {
-      console.log(err);
-    }
+    setIsLoading(true);
+    await PostApi.getBoard(1, 4)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   const handleScroll = useCallback(
@@ -74,6 +75,7 @@ const MainContainer = () => {
       bannerPage={bannerPage}
       postPage={postPage}
       handleNextPosting={handleNextPosting}
+      getPosting={getPosting}
     />
   );
 };

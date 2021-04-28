@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Main.css";
 
-const Main = ({ bannerPage, postPage, handleNextPosting }) => {
+const Main = ({ bannerPage, postPage, handleNextPosting, getPosting }) => {
   return (
     <div className="main">
       <div className="main-banner" ref={bannerPage}>
@@ -18,7 +18,7 @@ const Main = ({ bannerPage, postPage, handleNextPosting }) => {
               <button className="main-posting-header-nav-item">«</button>
               <button
                 className="main-posting-header-nav-item"
-                onClick={handleNextPosting}
+                onClick={getPosting}
               >
                 »
               </button>

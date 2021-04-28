@@ -1,9 +1,9 @@
 import axios from "axios";
 import { SERVER } from "../../config/config.json";
 class PostApi {
-  async getBoard(page, size, sort) {
+  async getBoard(page, size) {
     const response = await axios.get(
-      `${SERVER}/list?page=[${page}]&size=[${size}]&sort=[${sort}]`
+      `${SERVER}/list?page=${page}&size=${size}&sort=id,desc`
       // {
       //   headers: {
       //     Authorization: localStorage.getItem("accessToken"),
@@ -23,8 +23,8 @@ class PostApi {
     };
     const response = await axios.post(`${SERVER}/project/create`, body, {
       headers: {
-        Authorization: localStorage.getItem("accessToken"),
-        // "content-type": "multipart/form-data",
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
+        "content-type": "multipart/form-data",
       },
     });
 

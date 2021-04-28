@@ -18,14 +18,14 @@ const PostingContainer = () => {
   };
 
   const onChangeImg = e => {
-    setImg(e.target.files[0]);
+    setImg([...img, e.target.files[0]]);
   };
 
   const handlePosting = async () => {
     const file = new FormData();
     file.append("file", img);
-    console.log(title, content, users, file);
-    await PostApi.CreateBoard(title, content, users, file)
+    console.log(title, content, users, img);
+    await PostApi.CreateBoard(title, content, users, img)
       .then(response => {
         console.log(response);
       })
