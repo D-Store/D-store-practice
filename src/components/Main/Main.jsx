@@ -2,7 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Main.css";
 
-const Main = ({ bannerPage, postPage, handleNextPosting, getPosting }) => {
+const Main = ({
+  bannerPage,
+  postPage,
+  handleNextPosting,
+  getPosting,
+  postings,
+}) => {
   return (
     <div className="main">
       <div className="main-banner" ref={bannerPage}>
@@ -25,8 +31,20 @@ const Main = ({ bannerPage, postPage, handleNextPosting, getPosting }) => {
             </div>
           </div>
           <div className="main-posting-item">
-            {}
-            <Link className="link" to="/">
+            {postings.map((current, key) => {
+              return (
+                <Link className="link" to="/">
+                  <div
+                    className="main-posting-item-img"
+                    style={{
+                      backgroundImage: `url(http://${current.mainPhoto.fileLocation})`,
+                    }}
+                  ></div>
+                  <div className="mina-posting-item-img">{current.title}</div>
+                </Link>
+              );
+            })}
+            {/* <Link className="link" to="/">
               <div className="main-posting-item-img"></div>
               <div className="mina-posting-item-img">제목</div>
             </Link>
@@ -41,7 +59,7 @@ const Main = ({ bannerPage, postPage, handleNextPosting, getPosting }) => {
             <Link className="link" to="/">
               <div className="main-posting-item-img"></div>
               <div className="mina-posting-item-img">제목</div>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

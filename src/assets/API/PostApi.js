@@ -3,7 +3,7 @@ import { SERVER } from "../../config/config.json";
 class PostApi {
   async getBoard(page, size) {
     const response = await axios.get(
-      `${SERVER}/list?page=${page}&size=${size}&sort=id,desc`
+      `${SERVER}/project/list?page=${page}&size=${size}&sort=id,desc`
       // {
       //   headers: {
       //     Authorization: localStorage.getItem("accessToken"),
@@ -14,17 +14,11 @@ class PostApi {
     return response;
   }
 
-  async CreateBoard(title, content, users, file) {
-    const body = {
-      title,
-      content,
-      users,
-      file,
-    };
-    const response = await axios.post(`${SERVER}/project/create`, body, {
+  async CreateBoard(files) {
+    const response = await axios.post(`${SERVER}/project/create`, files, {
       headers: {
+        ContentType: "multipart/form-data",
         Authorization: "Bearer " + localStorage.getItem("accessToken"),
-        "content-type": "multipart/form-data",
       },
     });
 

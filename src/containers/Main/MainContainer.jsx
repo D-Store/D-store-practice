@@ -8,15 +8,20 @@ const MainContainer = () => {
 
   const [boradId, setBoradId] = useState([-1]);
   const [isLoading, setIsLoading] = useState(false);
+  const [postings, setPostings] = useState([]);
+
   let isScroll = false;
 
   // const [isScroll, setIsScroll] = useState(false);
 
   const getPosting = async () => {
     setIsLoading(true);
-    await PostApi.getBoard(1, 4)
+    await PostApi.getBoard(0, 4)
       .then(response => {
-        console.log(response);
+        console.log(response.data.projectList);
+        response.data.projectList.map(current => {
+          setPostings([...postings, current]);
+        });
       })
       .catch(err => {
         console.log(err);
@@ -76,6 +81,7 @@ const MainContainer = () => {
       postPage={postPage}
       handleNextPosting={handleNextPosting}
       getPosting={getPosting}
+      postings={postings}
     />
   );
 };

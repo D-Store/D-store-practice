@@ -6,7 +6,7 @@ const PostingContainer = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState();
   const [users, setUsers] = useState([]);
-  const [img, setImg] = useState("");
+  const [files, setFile] = useState("");
   const [imgs, setImgs] = useState([]);
 
   const onChangeTitle = e => {
@@ -18,19 +18,23 @@ const PostingContainer = () => {
   };
 
   const onChangeImg = e => {
-    setImg([...img, e.target.files[0]]);
+    console.log(e.target.files[0]);
+    setFile([...files, e.target.files]);
   };
 
   const handlePosting = async () => {
-    const file = new FormData();
-    file.append("file", img);
-    console.log(title, content, users, img);
-    await PostApi.CreateBoard(title, content, users, img)
+    const Form_Data = new FormData();
+    Form_Data.append("title", title);
+    Form_Data.append("content", content);
+    Form_Data.append("users", users);
+    Form_Data.append("files", files);
+    console.log(title, content, users, Form_Data);
+    await PostApi.CreateBoard(Form_Data)
       .then(response => {
         console.log(response);
       })
       .catch(err => {
-        console.log(err);
+        console.log(err.response);
       });
   };
   const postImgs = () => {
@@ -68,7 +72,7 @@ const PostingContainer = () => {
     <Posting
       title={title}
       content={content}
-      img={img}
+      img={files}
       setContent={setContent}
       onChangeTitle={onChangeTitle}
       onChangeContent={onChangeContent}

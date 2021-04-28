@@ -81,6 +81,7 @@ const Posting = ({
                 accept="image/jpg,image/png"
                 onChange={onChangeImg}
                 onClick={postImgs}
+                multiple
               />
             </div>
           </div>
