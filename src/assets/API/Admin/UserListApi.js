@@ -5,7 +5,7 @@ class UserListApi {
 
     async getUserList() {
 
-        const response = await axios.get(`${SERVER}/admin/userlist`)
+        const response = await axios.get(`${SERVER}/admin/user/list`)
 
         return response;
     }

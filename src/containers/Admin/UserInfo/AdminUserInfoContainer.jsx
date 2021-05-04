@@ -36,6 +36,7 @@ const AdminUserInfoContainer = () => {
         //로딩중
         setLoading(true)
         const response = await UserListApi.getUserList();
+        console.log(response)
         setTotalUser(response.data.userEntity)
         //로딩끝
         setLoading(false)
